@@ -1,3 +1,176 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap'); */
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.text-gold-500 {
+  color: #c5a47e;
+}
+
+.bg-gold-500 {
+  background-color: #c5a47e;
+}
+
+.hover\:bg-gold-600:hover {
+  background-color: #b08f69;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.border-slate-800 {
+    border-color: #1e293b;
+  }
+  
+  .hover\:text-gold-500:hover {
+    color: #c5a47e;
+  }
+  
+  .focus\:ring-gold-500:focus {
+    ring-color: #c5a47e;
+  }
+/* globals.css */
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap'); */
+
+/* CSS Variables with lux- prefix */
+:root {
+  --lux-primary-dark: #0f172a;
+  --lux-secondary-dark: #1e293b;
+  --lux-gold-500: #c5a47e;
+  --lux-gold-600: #b08f69;
+  --lux-text-light: #f8fafc;
+  --lux-text-dark: #0f172a;
+}
+
+/* Scoped Font Families */
+.lux-font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Scoped Animations */
+@keyframes lux-border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lux-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scoped Component Styles */
+.lux-gradient-btn {
+  --lux-angle: 0deg;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lux-gradient-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from var(--lux-angle),
+    transparent 20%,
+    var(--lux-gold-500) 40%,
+    transparent 60%
+  );
+  animation: lux-border-spin 3s linear infinite;
+  z-index: -1;
+}
+
+.lux-gradient-btn::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--lux-secondary-dark);
+  z-index: -1;
+}
+
+/* Scoped Scrollbar Styles */
+.lux-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lux-scrollbar::-webkit-scrollbar-track {
+  background: var(--lux-primary-dark);
+}
+
+.lux-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--lux-secondary-dark);
+  border-radius: 4px;
+}
+
+.lux-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--lux-gold-500);
+}
+
+/* Scoped Utility Classes */
+.lux-gold-gradient {
+  background: radial-gradient(
+    circle at center,
+    var(--lux-gold-500),
+    var(--lux-gold-600)
+  );
+}
+
+.lux-hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.lux-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Scoped Dark Theme Base */
+.lux-theme-dark {
+  background-color: var(--lux-primary-dark);
+  color: var(--lux-text-light);
+}
+
+.lux-theme-dark a {
+  color: var(--lux-gold-500);
+}
+
+/* Scoped Container */
+.lux-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Scoped Text Colors */
+.lux-text-gold {
+  color: var(--lux-gold-500);
+}
+
+.lux-text-dark {
+  color: var(--lux-text-dark);
+}
+
+/* Scoped Spacing */
+.lux-section-py {
+  padding: 6rem 0;
+}
+.animate-fade-in {
+  animation: fade-in 1.5s ease-out forwards;}

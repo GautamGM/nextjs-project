@@ -23,6 +23,16 @@ const nextConfig = {
         hostname: "ui-avatars.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "source.unsplash.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "image.unsplash.com",
+        port: "",
+      },
     ],
   },
   webpack: (config: { resolve: { alias: any; }; }) => {
