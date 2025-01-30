@@ -4,11 +4,23 @@
 import { motion } from "framer-motion"
 import { Lock, User, Github, Facebook, Twitter } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const LoginPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl bg-slate-800/50 backdrop-blur-lg rounded-xl shadow-2xl overflow-hidden flex flex-row-reverse ">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-4 relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+          alt="Luxury background"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-30"
+        />
+      </div>
+
+      <div className="w-full max-w-6xl bg-slate-800/50 backdrop-blur-lg rounded-xl shadow-2xl overflow-hidden flex flex-row-reverse relative z-10">
         {/* Left side with images */}
         <div className="hidden lg:block lg:w-1/2 relative ">
           <Image
@@ -137,9 +149,9 @@ const LoginPage = () => {
             className="text-center mt-8"
           >
             <span className="text-gray-300">Don't have an account? </span>
-            <a href="#" className="text-gold-500 hover:text-gold-400 font-semibold">
+            <Link href="/register" className="text-gold-500 hover:text-gold-400 font-semibold">
               Create Account
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
@@ -148,4 +160,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage
-
